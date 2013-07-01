@@ -32,4 +32,18 @@ describe "Static pages" do
     it { should have_selector('h1',    text: 'Contact') }
     it { should have_selector('title', text: full_title('Contact')) }
   end
+	describe "Test page" do
+		before { visit test_path }
+		it { should have_selector('title', text: full_title('Test')) }
+	end
+=begin
+# added by archana to try avoiding error on chap 6
+  describe "Signup page" do
+    before { visit signup_path }
+
+    it { should have_selector('h1',    text: 'Sign up') }
+    it { should have_selector('title', text: full_title('Sign up')) }
+  end
+# added by archana to try avoiding error on chap 6
+=end
 end
