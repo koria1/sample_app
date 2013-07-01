@@ -38,11 +38,11 @@ describe "Static pages" do
 	end
 =begin
 # added by archana to try avoiding error on chap 6
-  describe "Signup page" do
-    before { visit signup_path }
+  describe "Signin page" do
+    before { visit signin_path }
 
-    it { should have_selector('h1',    text: 'Sign up') }
-    it { should have_selector('title', text: full_title('Sign up')) }
+    it { should have_selector('h1',    text: 'Sign in') }
+    it { should have_selector('title', text: full_title('Sign in')) }
   end
 # added by archana to try avoiding error on chap 6
 =end
