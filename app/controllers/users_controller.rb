@@ -4,7 +4,8 @@ class UsersController < ApplicationController
   before_filter :admin_user,     only: :destroy 
  def show
     @user = User.find(params[:id])
-  end
+		@microposts = @user.microposts.paginate(page: params[:page])  
+end
 
   def new
 		@user = User.new
@@ -23,14 +24,11 @@ class UsersController < ApplicationController
   end
 
 
-#=begin
  def edit
     @user = User.find(params[:id])
   end
-#=end
 
 
-#=begin
 	def update
     #@user = User.find(params[:id])
     if @user.update_attributes(params[:user])
@@ -41,7 +39,6 @@ class UsersController < ApplicationController
       render 'edit'
     end
   end
-#=end
 
 	def index
 #		@users = User.all
@@ -54,7 +51,6 @@ class UsersController < ApplicationController
     redirect_to users_url
   end
 
-#=begin
 	private
 
     def signed_in_user
@@ -68,7 +64,6 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
       redirect_to(root_path) unless current_user?(@user)
     end
-#=end
 
 	def admin_user
       redirect_to(root_path) unless current_user.admin?
