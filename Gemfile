@@ -39,11 +39,11 @@ group :test do
   gem 'cucumber-rails', '1.2.1', :require => false
   gem 'database_cleaner', '0.7.0'
 end
-=begin
+#=begin
 group :production do
-  gem 'pg','1.12.1'
+  gem 'pg','0.12.2'
 end
-=end
+#=end
 
 
 # To use ActiveModel has_secure_password
